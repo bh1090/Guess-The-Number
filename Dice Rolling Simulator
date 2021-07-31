@@ -1,0 +1,48 @@
+# Dice rolling simulator:
+import random
+
+number = (random.randint(1, 100))
+print("Guess the number that I have chosen between 1 and 100.. Good Luck!!")
+m = 0
+q = 0
+w = 0
+a = input()
+count = 0
+count += 1
+while m == 0:
+    try:
+        a = int(a)
+        m += 1
+    except ValueError:
+        print("Please print an integer data type only (a number)")
+        a = input()
+k = 0
+while k == 0:
+    if int(a) > number:
+        print("Your guess is higher than the chosen number, try again!")
+        count += 1
+        a = input()
+        while q == 0:
+            try:
+                a = int(a)
+                q += 1
+            except ValueError:
+                print("Please print an integer data type only (a number)")
+                a = input()
+    elif int(a) < number:
+        print("Your guess is lower than the chosen number, try again")
+        count += 1
+        a = input()
+        while w == 0:
+            try:
+                a = int(a)
+
+                w += 1
+            except ValueError:
+                print("Please print an integer data type only (a number)")
+                a = input()
+    elif int(a) == number:
+        count += 1
+        print("Congratulations, you guessed the correct number: " + str(number))
+        print("You guessed the correct answer in " + str(count - 1) + " tries!")
+        k += 1 
